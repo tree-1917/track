@@ -1,0 +1,352 @@
+/* General Rules */
+:root {
+  --sec-margin: 60px;
+  --o-color: orange;
+  --r-color: #fff;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #fff;
+  color: #fff;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.container {
+  margin: 0px auto;
+  width: 90%;
+}
+a {
+  color: var(--r-color);
+  text-decoration: none;
+}
+/* End General Rules */
+/* Component */
+.popup-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.popup-box {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.popup-box h3 {
+  color: var(--o-color);
+  text-align: center;
+  margin: 0px 0px 20px 0px;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+}
+.popup-box img {
+  width: 100%;
+  height: 100%;
+}
+.popup-box .close-btn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  color: #fff;
+  background-color: var(--o-color);
+  font-size: 1.5rem;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-weight: bold;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0px 4px 9px 0px #12312378;
+}
+/* End Component */
+/* Setting Box */
+.settings {
+  position: fixed;
+  left: -200px;
+  top: 0;
+  background: white;
+  width: 200px;
+  min-height: 100vh;
+  z-index: 1000;
+  color: #000;
+  transition: 0.5s;
+}
+.settings.open {
+  left: 0px;
+}
+.settings .icon-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  right: -32px;
+  top: 100px;
+  justify-content: center;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 0px 10px 10px 0px;
+}
+.settings .icon {
+  color: var(--o-color);
+}
+.settings .container {
+}
+.settings .container .option-box {
+  padding: 20px;
+  background-color: #eee;
+  margin-top: 15px;
+  padding: 10px 20px;
+  text-align: center;
+}
+.settings .option-box h4 {
+  color: var(--o-color);
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+}
+.settings .option-box .colors {
+  display: flex;
+  list-style: none;
+  gap: 2px;
+  width: fit-content;
+}
+
+.settings .option-box .colors li {
+  width: 30px;
+  height: 30px;
+  /* border-radius: 50%; */
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.settings .option-box .colors li:first-child {
+  background-color: #ff9800;
+}
+.settings .option-box .colors li:nth-child(2) {
+  background-color: #e91e63;
+}
+.settings .option-box .colors li:nth-child(3) {
+  background-color: #2196f3;
+}
+.settings .option-box .colors li:last-child {
+  background-color: #009688;
+}
+.settings .option-box .colors li.active {
+  opacity: 1;
+}
+.settings .bg-controls span {
+  background-color: #009688;
+  color: #fff;
+  width: 50px;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: inline-block;
+  opacity: 0.5;
+  border-radius: 4px;
+  user-select: none;
+}
+.settings .bg-controls .no {
+  background-color: #ff0055;
+}
+.settings .bg-controls span.active {
+  opacity: 1;
+}
+.img-holder {
+  width: 300px;
+  height: 300px;
+}
+.img-holder img {
+  max-width: 100%;
+  max-height: 100%;
+}
+html::-webkit-scrollbar {
+  background-color: #2a3136;
+  width: 7px;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: var(--r-color);
+}
+/* End Setting Box */
+/* Land Area */
+.land {
+  min-height: 100vh;
+  background-image: url("../assets/images/bg-4.jpg");
+  background-size: cover;
+  position: relative;
+}
+.land-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(5 5 5 / 56%);
+  z-index: 1;
+}
+.land-header {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.land-header h2 span {
+  color: var(--o-color);
+}
+.land-header .links {
+  width: 70%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 24px;
+}
+.land-header .links li {
+  list-style: none;
+  cursor: pointer;
+}
+.land-header .links li a {
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+.land-header .links li a:hover,
+.land-header .links li a.active {
+  color: var(--o-color);
+}
+.land-dec {
+  width: 80%;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.land-dec h1 {
+  margin: 0 0 14px;
+}
+.land-dec p {
+  line-height: 1.6;
+  font-size: 18px;
+  color: var(--r-color);
+}
+.land-dec h1 span {
+  color: var(--o-color);
+}
+/* End Land Area */
+/* About Us */
+.about-us {
+  margin: var(--sec-margin) 0px;
+}
+.about-us .container {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  align-items: center;
+}
+.about-us .container .info {
+  flex: 3;
+}
+.about-us .container .info h2 {
+  color: var(--o-color);
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+.about-us .container .info p {
+  line-height: 1.7;
+  color: #626362;
+}
+.about-us .container .img-holder {
+  flex: 2;
+  text-align: center;
+}
+.about-us .container .img-holder img {
+  width: auto;
+  height: auto;
+}
+/* End About Us */
+/* Skills */
+.skills {
+  color: #000;
+  background-color: #eee;
+  padding: var(--sec-margin) 0px;
+}
+.skills .container {
+}
+.skills .container h2 {
+  text-align: center;
+  color: var(--o-color);
+  font-size: 3rem;
+  margin-bottom: var(--sec-margin);
+}
+.skills .container .skills-box {
+}
+.skills .container .skills-box .skill-box {
+  margin-bottom: 20px;
+  background-color: #fff;
+  position: relative;
+  height: 40px;
+  border-radius: 4px;
+}
+.skills .container .skills-box h4 {
+  font-size: 1.3rem;
+  color: #222;
+  padding: 7px 10px 10px 30px;
+}
+.skills .container .skills-box .skill-progress {
+  background-color: rgb(222, 222, 222);
+  position: absolute;
+  height: calc(100% - 10px);
+  top: 5px;
+  left: 19%;
+  width: calc(100% - 20%);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.skills .container .skills-box .skill-progress span {
+  background: var(--o-color);
+  display: inline-block;
+  transition: 0.4s;
+  height: 100%;
+  width: 0%;
+}
+
+/* End Skills */
+
+/* Start Gallery */
+.gallery {
+  padding-top: var(--sec-margin);
+  padding-bottom: 20px;
+}
+.gallery .container {
+}
+.gallery h4 {
+  text-align: center;
+  color: var(--o-color);
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.gallery .box-imgs {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.gallery .box-imgs img {
+  width: 200px;
+  border: 5px solid #dcdcda;
+  cursor: pointer;
+  margin: 5px;
+}
+/* End Gallery */
